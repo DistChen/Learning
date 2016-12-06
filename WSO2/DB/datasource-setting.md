@@ -12,10 +12,10 @@
 
 ## 修改配置文件
 1. 配置文件路径:wso2_home\repository\conf\datasources\master-datasources.xml
-![](./resources/数据库配置文件路径.jpg)
+![](./resources/数据库配置文件.jpg)
 
 2. 修改前文件内容
-！[](./resources/修改前文件.jpg)
+![](./resources/修改前文件.jpg)
 
 3. 修改后文件内容
 ![](./resources/修改后文件.jpg) 
