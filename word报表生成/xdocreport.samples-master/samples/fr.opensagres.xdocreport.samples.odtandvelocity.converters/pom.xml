@@ -1,0 +1,29 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<parent>
+		<artifactId>samples</artifactId>
+		<groupId>fr.opensagres.xdocreport.samples</groupId>
+		<version>1.0.6-SNAPSHOT</version>
+		
+	</parent>
+	<modelVersion>4.0.0</modelVersion>
+	<artifactId>odtandvelocity.converters</artifactId>
+	
+	<description>ODT (Open Office) document, templating based on velocity and convert to PDF or HTML</description>
+	<dependencies>
+		<dependency>
+			<groupId>fr.opensagres.xdocreport</groupId>
+			<artifactId>fr.opensagres.xdocreport.document.odt</artifactId>
+		
+		</dependency>
+		<dependency>
+			<groupId>fr.opensagres.xdocreport</groupId>
+			<artifactId>fr.opensagres.xdocreport.template.velocity</artifactId>
+		
+		</dependency>
+		<dependency>
+			<groupId>fr.opensagres.xdocreport</groupId>
+			<artifactId>fr.opensagres.xdocreport.converter.odt.odfdom</artifactId>
+		
+		</dependency>
+	</dependencies>
+</project>

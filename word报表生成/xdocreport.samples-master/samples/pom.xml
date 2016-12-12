@@ -1,0 +1,87 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<artifactId>samples</artifactId>
+
+	<parent>
+		<groupId>fr.opensagres.xdocreport.samples</groupId>
+		<artifactId>xdocreport-samples</artifactId>
+		<version>1.0.6-SNAPSHOT</version>
+	</parent>
+	<packaging>pom</packaging>
+	<build>
+		<sourceDirectory>src</sourceDirectory>
+		<resources>
+			<resource>
+				<directory>resources</directory>
+			</resource>
+		</resources>
+		<plugins>
+			<plugin>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<inherited>true</inherited>
+				<dependencies>
+					<dependency>
+						<groupId>fr.opensagres.xdocreport.samples</groupId>
+						<version>0.9.8</version>
+						<artifactId>sample-assembly-descriptor</artifactId>
+					</dependency>
+				</dependencies>
+
+				<!-- uncomment to bind to the "package" phase on invoke mvn assembly:single 
+					on xdocreport/samples folder -->
+				<!-- <executions> <execution> <phase>package</phase> <goals> <goal>single</goal> 
+					</goals> </execution> </executions> -->
+				<configuration>
+					<skipAssembly>false</skipAssembly>
+					<descriptorRefs>
+						<descriptorRef>sample</descriptorRef>
+					</descriptorRefs>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>fr.opensagres.maven.plugins</groupId>
+				<artifactId>gcupload-maven-plugin</artifactId>
+				<inherited>true</inherited>
+				<configuration>
+					<projectName>xdocreport</projectName>
+					<uploads>
+						<upload>
+							<classifier>sample</classifier>
+							<labels>OpSys-All,Type-Source,Featured</labels>
+						</upload>
+					</uploads>
+				</configuration>
+			</plugin>
+
+		</plugins>
+	</build>
+	<modules>
+		<!-- Samples reporting with Velocity -->
+		<module>fr.opensagres.xdocreport.samples.docxandvelocity</module>
+		<module>fr.opensagres.xdocreport.samples.pptxandvelocity</module>
+		<module>fr.opensagres.xdocreport.samples.odtandvelocity</module>
+		<module>fr.opensagres.xdocreport.samples.odpandvelocity</module>
+
+		<!-- Samples reporting + converter with Velocity -->
+		<module>fr.opensagres.xdocreport.samples.docxandvelocity.converters</module>
+		<module>fr.opensagres.xdocreport.samples.odtandvelocity.converters</module>
+
+		<!-- Samples reporting with Freemarker -->
+		<module>fr.opensagres.xdocreport.samples.docxandfreemarker</module>
+		<module>fr.opensagres.xdocreport.samples.odtandfreemarker</module>
+
+		<!-- Samples docx->PDF/XHTML converter -->
+		<module>fr.opensagres.xdocreport.samples.docx.converters</module>
+
+		<!-- Samples odt->PDF/XHTML converter -->
+		<module>fr.opensagres.xdocreport.samples.odt.converters</module>
+
+		<module>
+			fr.opensagres.xdocreport.samples.docxandvelocity.converters.itext5
+		</module>
+	</modules>
+
+
+
+</project>

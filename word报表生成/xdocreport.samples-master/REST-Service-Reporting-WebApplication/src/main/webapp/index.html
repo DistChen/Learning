@@ -1,0 +1,121 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>REST XDocReport Reporting Demo</title>
+<link rel="icon" href="img/xdocreport.png" sizes="32x32">
+<link href="css/bootstrap.min.css" type="text/css" rel="stylesheet">
+
+<script type="text/javascript" src="js/codemirror/lib/codemirror.js"></script>
+<script type="text/javascript" src="js/codemirror/addon/selection/active-line.js"></script>
+<link href="js/codemirror/lib/codemirror.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="js/codemirror/doc/docs.css">
+<script type="text/javascript" src="js/codemirror/addon/lint/lint.js"></script>
+<link href="js/codemirror/addon/lint/lint.css" rel="stylesheet" type="text/css" />
+
+<script type="text/javascript" src="js/jsonlint.js"></script>
+<script type="text/javascript" src="js/codemirror/mode/javascript/javascript.js"></script>
+<script type="text/javascript" src="js/codemirror/addon/lint/json-lint.js"></script>
+
+<script type="text/javascript" src="js/codemirror/mode/xml/xml.js"></script>
+<script type="text/javascript" src="js/codemirror/addon/edit/closetag.js"></script>
+ 
+<script type="text/javascript" src="js/xdocreport.js"></script>
+
+    <style type="text/css">
+      .CodeMirror {border-top: 1px solid black; border-bottom: 1px solid black; height: 200px;}
+      .CodeMirror-activeline-background {background: #e8f2ff !important;}
+    </style>
+
+
+</head>
+<body onload="javascript:bindWithCodeMirror()" >
+	<form id="form" action="jaxrs/report" enctype="multipart/form-data"
+		method="post" class="form-horizontal" target="previewFrame">
+		<legend>REST XDocReport Reporting Demo, please upload a ODT or Docx file....</legend>
+		<div class="control-group">
+			<label class="control-label" for="document">Upload a file (Required):</label>
+			<div class="controls">
+				<input type="file" class="file" name="templateDocument" id="templateDocument" onchange="updateOut();" >
+			</div>	
+			<label class="control-label" for="templateEngineKind">Template Engine:</label>
+			<div class="controls">
+				 <select name="templateEngineKind" >
+				 	<option name="Velocity" >Velocity</option>
+				 	<option name="Freemarker" >Freemarker</option>
+				 </select>	 
+			</div>	
+			<label class="control-label" for="metadata">XML Fields metadata:</label>
+			<div class="controls">
+				 <textarea name="metadata" id="metadata" rows="10" cols="50">
+&lt;fields&gt;
+	&lt;field name="project.Name" list="false" imageName="" syntaxKind="" /&gt;
+	&lt;field name="developers.Name" list="true" imageName="" syntaxKind="" /&gt;
+	&lt;field name="developers.LastName" list="true" imageName="" syntaxKind="" /&gt;
+	&lt;field name="developers.Mail" list="true" imageName="" syntaxKind="" /&gt;
+&lt;/fields&gt;
+				 </textarea>
+			</div>								
+			<label class="control-label" for="dataType">Data type:</label>
+			<div class="controls">
+				 <select name="dataType" >
+				 	<option name="JSON" >JSON</option>
+				 </select>	 
+			</div>			
+			<label class="control-label" for="data">JSON data:</label>
+			<div class="controls">
+				 <textarea name="data" id="data" rows="10" cols="50">
+{
+ "project": {"Name": "XDocReport", "URL": "http://code.google.com/p/xdocreport/"},
+ "developers": [
+  {
+   "Name": "ZERR",
+   "Mail": "angelo.zerr@gmail.com",
+   "LastName": "Angelo"
+  },
+  {
+   "Name": "Leclercq",
+   "Mail": "pascal.leclercq@gmail.com",
+   "LastName": "Pascal"
+  }
+ ]
+}
+				 </textarea>
+			</div>		
+			<label class="control-label" for="outFileName">Output File Name:</label>
+			<div class="controls">
+				<input type="text" name="outFileName" id="outFileName" />
+			</div>
+			<label class="control-label" for="outFormat">Select the output format:</label>
+			<div class="controls">
+				<label class="radio">
+				 <input type="radio" name="outFormat" value="" checked onchange="updateOut(this.value);" >None
+				</label>			
+				<label class="radio">
+				 <input type="radio" name="outFormat" value="PDF" onchange="updateOut(this.value);">PDF
+				</label>
+				<label class="radio">
+				<input type="radio" name="outFormat" value="XHTML" onchange="updateOut(this.value);" >XHTML
+				</label>
+			</div>
+			<label class="control-label" for="outFormatVia">Convert with framework:</label>
+			<div class="controls">
+				<label class="radio">
+				 <input type="radio" name="outFormatVia" value="" checked >None
+				</label>			
+				<label class="radio">
+				 <input type="radio" name="outFormatVia" value="XWPF" >XDocReport (Docx)
+				</label>
+				<label class="radio">
+				 <input type="radio" name="outFormatVia" value="ODFDOM" >XDocReport (ODT)
+				</label> 				 
+				<label class="radio">
+				<input type="radio" name="outFormatVia" value="DOCX4J">Docx4j (Docx only)
+				</label>
+			</div>						
+			<div class="controls">
+				<button type="submit" name="download"  value="true" class="btn">Download</button>
+			</div>			
+		</div>
+	</form>
+</body>
+</html>
