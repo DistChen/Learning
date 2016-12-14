@@ -7,7 +7,7 @@
 > Purpose : 规划审批库中，有些项目已经有了红线，但是该项目在SYS_DIC_PRJSTAGERECORD表中的Mark还是为1，
 >           导致前端显示的时候提示“暂未画红线”，现将这部分项目的Mark值更改为3，其他项目的Mark值不变
 
-```
+```sql
 create or replace package PCK_UpdatePrjRecord is
 
   -- Author  : yangmin
