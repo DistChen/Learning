@@ -1,0 +1,1 @@
+> 配置方法请参考[《SDE库配置方法》](./sde-oracle-config.md)
