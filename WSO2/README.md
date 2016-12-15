@@ -9,4 +9,4 @@
 - [WSO2源码](http://wso2.github.io/)
 - [http://blog.csdn.net/szh1124/article/category/2751063](http://blog.csdn.net/szh1124/article/category/2751063)
 - [http://blog.sina.com.cn/s/blog_53c727c30100uahp.html](http://blog.sina.com.cn/s/blog_53c727c30100uahp.html)
-- [How to write a WSO2 Carbon Component](http://wso2.com/library/tutorials/2014/03/how-to-write-a-wso2-carbon-component)
+- [How to write a WSO2 Carbon Component](http://wso2.com/library/tutorials/2014/03/how-to-write-a-wso2-carbon-component)
