@@ -12,7 +12,7 @@
 - carte-config-master-8080.xml
 - kettle.pwd
 
-![](http://www.chenyp.com/img/fadsfioi.png)
+![](./img/fadsfioi.png)
 
 截图中的另外几个配置文件可不要(除非你要搭建集群)，`carte-config-master-8080.xml`的名称中的`8080`代表启动时的端口，可根据实际情况修改，对应的内容也要做出相应的修改：
 
@@ -55,7 +55,7 @@ cluster: OBF:1v8w1uh21z7k1ym71z7i1ugo1v9q
 cd %Kettle_Home%
 Encr -carte your_password
 ```
-![](http://www.chenyp.com/img/YP5Z97PV1IITC.png)
+![](./img/YP5Z97PV1IITC.png)
 
 ### 启动服务
 执行如下命令即可启动服务器：
@@ -64,7 +64,7 @@ Carte hostname port
 ```
 命令中的`port`需要与[配置文件](#配置文件)设置的port对应，正常启动后如下所示：
 
-![](http://www.chenyp.com/img/Q435YZ9.png)
+![](./img/Q435YZ9.png)
 
 访问[http://localhost:8080](http://localhost:8080/kettle/status/)，输入用户名/密码即可验证是否正常。
 
@@ -74,14 +74,14 @@ Carte hostname port
 
 这个转换放在了仓库`kettle54_local`中，仓库的用户名是`admin`，密码是`admin`，所处目录是`/services`，转换的名称是`demo`，如下所示：
 
-![](http://www.chenyp.com/img/UZSEDXSE26NETBREH6.png)
+![](./img/UZSEDXSE26NETBREH6.png)
 
 调用后，返回结果如下:
 
-![](http://www.chenyp.com/img/VQ0KV4QGQQUCFJ565K.png)
+![](./img/VQ0KV4QGQQUCFJ565K.png)
 
 需要注意的是，如果在服务中想要得到响应结果，`输出`需要勾选此选项，`xml输出`等同理：
 
-![](http://www.chenyp.com/img/XG5YV005_OVZNF21NI2.png)
+![](./img/XG5YV005_OVZNF21NI2.png)
 
 更多API可参考：[http://help.pentaho.com/Documentation/5.4/0R0/070/020/020/020]( http://help.pentaho.com/Documentation/5.4/0R0/070/020/020/020)
