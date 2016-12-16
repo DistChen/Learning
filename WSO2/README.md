@@ -1,6 +1,6 @@
-- [UI修改及汉化](./UI修改及汉化/README.md)
+- [UI修改及汉化](./UI修改及汉化)
 - [数据源设置](./DB/datasource-setting.md)
-- [开发相关]()
+- [开发相关](./dev)
 
 #### 资源
 - [ESB-5.0.0.pdf](./resource/ESB500-071216-1709-197852.pdf)
