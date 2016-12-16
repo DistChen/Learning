@@ -1,6 +1,7 @@
 我们知道WSO2产品内部各组件之间都是通过基于SOAP协议的Web Service来交互的，这部分的服务可以叫做`管理服务`。我们也可以调用这些管理服务来完成ESB的各项功能，如：服务管理、用户管理等。
 
 首先得知道有哪些`管理服务`可以调用，下面是查看的方法：
+
 1. 打开`%ESB_HOME%/repository/conf/carbon.xml`文件，修改`<HideAdminServiceWSDLs>`节点值为false；
 2. 使用参数`-DosgiConsole`启动`wso2server.bat`，如：`%ESB_HOME%/bin/wso2server.bat -DosgiConsole`；
 3. 当服务启动之后，按一下回车，输入`listAdminServices`即可列出所有的管理服务，如下所示：
