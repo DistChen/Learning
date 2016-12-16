@@ -18,6 +18,6 @@
 3. 添加代理服务；
 4. 删除代理服务。
 
-> 注意 ：示例工程中的`wso2carbon.jks`文件请替换成实际的`JKS`文件，此文件位于`%ESB_HOME%/repository/resources/security`
+> 注意 ：示例工程中的`wso2carbon.jks`文件请替换成实际的`JKS`文件，此文件位于`%ESB_HOME%/repository/resources/security`。 
 
 更多的功能都可以通过这些`管理服务`来完成。
