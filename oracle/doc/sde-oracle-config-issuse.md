@@ -1,4 +1,5 @@
 1、	SDE报错:  ORA-28575
+
  ![image](https://github.com/DistX/Learning/blob/master/oracle/doc/image/1.jpg)
  ![image](https://github.com/DistX/Learning/blob/master/oracle/doc/image/2.jpg)
  ![image](https://github.com/DistX/Learning/blob/master/oracle/doc/image/3.jpg)
