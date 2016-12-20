@@ -1,7 +1,7 @@
 #SDE配置常见问题汇总 
 ##1、	SDE报错:  ORA-28575
 
- ![](./1.jpg)<br>
+ ![](./image/1.jpg)<br>
  ![](./image/2.jpg)<br>
  ![](./image/3.jpg)<br>
  
