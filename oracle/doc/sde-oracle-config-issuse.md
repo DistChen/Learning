@@ -38,11 +38,11 @@ E:\app\Administrator\product\11.2.0\dbhome_1\BIN\st_shapelib.dll  ； <br>
        测试2：当尝试把SDE用户的libraries路径故意写错时，报错如下：<br>
  ![image](https://github.com/DistX/Learning/blob/master/oracle/doc/image/7.jpg)
  
-测试3：当尝试把listener.ora中的st_shapelib.dll文件路径写错时，居然没有报错，此处很疑惑!!!???
+测试3：当尝试把listener.ora中的st_shapelib.dll文件路径写错时，居然没有报错，此处很疑惑!!!???  <br>
 注：要求大家肯定还是要写正确路径的，并且SDE用户的userlibraries和listener.ora的st_shapelib.dll的路径尽量保持一致(规范)
 
-##如下是一些需要注意的细节问题
-##1、在重启监听时，容易遇到如下问题，此问题一般是因为PL/SQL还连着数据库，所以最好把oracle用户连接都先关闭了，再重启监听。
+##如下是一些需要注意的细节问题<br>
+##1、在重启监听时，容易遇到如下问题，此问题一般是因为PL/SQL还连着数据库，所以最好把oracle用户连接都先关闭了，再重启监听。<br>
 
  ![image](https://github.com/DistX/Learning/blob/master/oracle/doc/image/8.jpg)
  
@@ -51,22 +51,22 @@ E:\app\Administrator\product\11.2.0\dbhome_1\BIN\st_shapelib.dll  ； <br>
  ![image](https://github.com/DistX/Learning/blob/master/oracle/doc/image/9.jpg)
  
 ##3、	案例研究
-###案例1  中江多规合一部署  报错ORA-28575及解决
+###案例1  中江多规合一部署  报错ORA-28575及解决<br>
  
-结论：通过方案3，解决问题。不过报错根本原因无从得知。
+结论：通过方案3，解决问题。不过报错根本原因无从得知。<br>
 
  ![image](https://github.com/DistX/Learning/blob/master/oracle/doc/image/10.jpg)
  
-###案例2  淮安多规合一现场演示机部署  报错ORA-28575及解决
+###案例2  淮安多规合一现场演示机部署  报错ORA-28575及解决<br>
 
  ![image](https://github.com/DistX/Learning/blob/master/oracle/doc/image/11.jpg)
  
-	检查发现，配置并没有问题；重启服务器，稍等15分钟再手动启动ORACLE监听，还是无效。即方案1/2/3全部失效。
+	检查发现，配置并没有问题；重启服务器，稍等15分钟再手动启动ORACLE监听，还是无效。即方案1/2/3全部失效。<br>
 
 	测试其他方法：删除HADG.JSFAFW图层数据(包含有一些历史数据)和DG_PROJECT表数据，没有重启tomcat，SDE直接好了，可以正常上传空间位置了。
 	
-	判断问题：1.受历史数据的影响？推理：要影响早影响了，故排除。
-			   2.受图层位置有叠加或者互相包含的影响？推理：有可能，但是亲测并不存在
+	判断问题：1.受历史数据的影响？推理：要影响早影响了，故排除。<br>
+		2.受图层位置有叠加或者互相包含的影响？推理：有可能，但是亲测并不存在<br>
 
 
 
