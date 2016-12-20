@@ -1,9 +1,9 @@
 #SDE配置常见问题汇总 
 ##1、	SDE报错:  ORA-28575
 
- ![image](https://github.com/DistX/Learning/blob/master/oracle/doc/image/1.jpg)
- ![image](https://github.com/DistX/Learning/blob/master/oracle/doc/image/2.jpg)
- ![image](https://github.com/DistX/Learning/blob/master/oracle/doc/image/3.jpg)
+ ![](./1.jpg)<br>
+ ![](./image/2.jpg)<br>
+ ![](./image/3.jpg)<br>
  
 以上关于ORA-28575的报错，原因及解决方案如下：
 
