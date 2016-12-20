@@ -32,10 +32,10 @@ OracleOraDb11g_home1TNSListener，也可能导致报错ORA-28575。
 ##2、	关于网上说的SDE用户的userlibraries和listener.ora的st_shapelib.dll的路径需要一致,亲测其实并不需要是指向同一个路径，只是路径指向的st_shapelib.dll这个文件需要是同一个版本。
 注：测试1：将 E:\Program Files\ArcGIS\ArcSDE\ora11gexe\bin\st_shapelib.dll 复制到  
 E:\app\Administrator\product\11.2.0\dbhome_1\BIN\ st_shapelib.dll  然后listener.ora文件中st_shapelib路径指定为：E:\Program Files\ArcGIS\ArcSDE\ora11gexe\bin\st_shapelib.dll  ； SDE用户的libraries路径指定为：
-E:\app\Administrator\product\11.2.0\dbhome_1\BIN\st_shapelib.dll  ； 
-		重启  OracleOraDb11g_home1TNSListener
-		测试  select sde.st_point(0,0,0) from dual;  成功！
-       测试2：当尝试把SDE用户的libraries路径故意写错时，报错如下：
+E:\app\Administrator\product\11.2.0\dbhome_1\BIN\st_shapelib.dll  ； <br>
+		重启  OracleOraDb11g_home1TNSListener; <br>
+		测试  select sde.st_point(0,0,0) from dual;  成功！<br>
+       测试2：当尝试把SDE用户的libraries路径故意写错时，报错如下：<br>
  ![image](https://github.com/DistX/Learning/blob/master/oracle/doc/image/7.jpg)
  
 测试3：当尝试把listener.ora中的st_shapelib.dll文件路径写错时，居然没有报错，此处很疑惑!!!???
