@@ -15,13 +15,13 @@
  ![image](https://github.com/DistX/Learning/blob/master/oracle/doc/image/5.jpg)
  
 报错原因3：ArcSde Service(esri_sde)服务以及相关ArcGis服务还没有启动完全 ，此时如果立即启动oracle监听
-OracleOraDb11g_home1TNSListener，也可能导致报错ORA-28575。
+OracleOraDb11g_home1TNSListener，也可能导致报错ORA-28575。<br>
 情景模式：这种情况适用于解释原本SDE函数的使用是好的，突然某次开关机或者待机一段时间后就报错了，如果错误出现的情景基本如此，那么请优先尝试报错原因3对应的解决方案！
 报错原因3对应解决方案：重启电脑(服务器)-->先启动OracleServiceORCL和ArcSde Service(esri_sde) -->等待15分钟左右(看电脑性能，总之是要等ArcGis服务启动完全之后)-->再手动启动监听OracleOraDb11g_home1TNSListener(如果设计的是开启自启动，请先更改为手动) -->测试
 测试SDE： select sde.st_point(0,0,0) from dual;  成功
 
 
-报错原因1/2情景模式：报错原因1/2适用于解释那些电脑刚安装好SDE或者修改过相关配置后SDE函数就无法使用的情况
+报错原因1/2情景模式：报错原因1/2适用于解释那些电脑刚安装好SDE或者修改过相关配置后SDE函数就无法使用的情况<br>
 报错原因1/2的解决方案：这两对值需要一一对应  正确配置如下
 注意：修改tnsnames.ora和listener.ora配置后，只需要重启oracle监听服务然后进行测试即可。
 
@@ -61,20 +61,12 @@ E:\app\Administrator\product\11.2.0\dbhome_1\BIN\st_shapelib.dll  ； <br>
 
  ![image](https://github.com/DistX/Learning/blob/master/oracle/doc/image/11.jpg)
  
-	检查发现，配置并没有问题；重启服务器，稍等15分钟再手动启动ORACLE监听，还是无效。即方案1/2/3全部失效。<br>
-
-	测试其他方法：删除HADG.JSFAFW图层数据(包含有一些历史数据)和DG_PROJECT表数据，没有重启tomcat，SDE直接好了，可以正常上传空间位置了。
+	检查发现，配置并没有问题；重启服务器，稍等15分钟再手动启动ORACLE监听，还是无效。即方案1/2/3全部失效。
+	测试其他方法：删除HADG.JSFAFW图层数据(包含有一些历史数据)和DG_PROJECT表数据，
+	没有重启tomcat，SDE直接好了，可以正常上传空间位置了。
 	
-	判断问题：1.受历史数据的影响？推理：要影响早影响了，故排除。<br>
-		2.受图层位置有叠加或者互相包含的影响？推理：有可能，但是亲测并不存在<br>
-
-
-
-
-
-
-
-
+	判断问题：1.受历史数据的影响？推理：要影响早影响了，故排除。
+		2.受图层位置有叠加或者互相包含的影响？推理：有可能，但是亲测并不存在。<br>
 
 推理2测试：图形位置可以上传成功。
 
