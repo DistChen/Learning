@@ -42,18 +42,22 @@ E:\app\Administrator\product\11.2.0\dbhome_1\BIN\st_shapelib.dll  ；
 
 ***如下是一些需要注意的细节问题
 1、在重启监听时，容易遇到如下问题，此问题一般是因为PL/SQL还连着数据库，所以最好把oracle用户连接都先关闭了，再重启监听。
+
  ![image](https://github.com/DistX/Learning/blob/master/oracle/doc/image/8.jpg)
  
 2、查看一下Oracle的监听状态，extproc（CLRextproc)的状态必须为静态（Unknow），如果是Ready状态就有可能出现问题，而且Oracle监听必须同时监听TCP和IPC
+
  ![image](https://github.com/DistX/Learning/blob/master/oracle/doc/image/9.jpg)
  
 3、	案例研究
 案例1  中江多规合一部署  报错ORA-28575及解决
  
 结论：通过方案3，解决问题。不过报错根本原因无从得知。
+
  ![image](https://github.com/DistX/Learning/blob/master/oracle/doc/image/10.jpg)
  
 案例2  淮安多规合一现场演示机部署  报错ORA-28575及解决
+
  ![image](https://github.com/DistX/Learning/blob/master/oracle/doc/image/11.jpg)
  
 	检查发现，配置并没有问题；重启服务器，稍等15分钟再手动启动ORACLE监听，还是无效。即方案1/2/3全部失效。
@@ -72,6 +76,7 @@ E:\app\Administrator\product\11.2.0\dbhome_1\BIN\st_shapelib.dll  ；
 
 
 推理2测试：图形位置可以上传成功。
+
  ![image](https://github.com/DistX/Learning/blob/master/oracle/doc/image/12.jpg)
  
 	淮安多规结论：对于SDE函数突然报错ORA-28575，导致无法使用，还是没有找到根本原因。
