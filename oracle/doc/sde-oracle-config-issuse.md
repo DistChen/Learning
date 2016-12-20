@@ -1,3 +1,5 @@
+SDE配置常见问题汇总
+====== 
 1、	SDE报错:  ORA-28575
 
  ![image](https://github.com/DistX/Learning/blob/master/oracle/doc/image/1.jpg)
