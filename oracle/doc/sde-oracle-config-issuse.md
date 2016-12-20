@@ -1,5 +1,5 @@
 #SDE配置常见问题汇总 
-1、	SDE报错:  ORA-28575
+##1、	SDE报错:  ORA-28575
 
  ![image](https://github.com/DistX/Learning/blob/master/oracle/doc/image/1.jpg)
  ![image](https://github.com/DistX/Learning/blob/master/oracle/doc/image/2.jpg)
@@ -29,7 +29,7 @@ OracleOraDb11g_home1TNSListener，也可能导致报错ORA-28575。
 改过配置后，重启监听即可(亲测)(不需要重启SDE服务和ORACLE实例)
  ![image](https://github.com/DistX/Learning/blob/master/oracle/doc/image/6.jpg)
  
-2、	关于网上说的SDE用户的userlibraries和listener.ora的st_shapelib.dll的路径需要一致,亲测其实并不需要是指向同一个路径，只是路径指向的st_shapelib.dll这个文件需要是同一个版本。
+##2、	关于网上说的SDE用户的userlibraries和listener.ora的st_shapelib.dll的路径需要一致,亲测其实并不需要是指向同一个路径，只是路径指向的st_shapelib.dll这个文件需要是同一个版本。
 注：测试1：将 E:\Program Files\ArcGIS\ArcSDE\ora11gexe\bin\st_shapelib.dll 复制到  
 E:\app\Administrator\product\11.2.0\dbhome_1\BIN\ st_shapelib.dll  然后listener.ora文件中st_shapelib路径指定为：E:\Program Files\ArcGIS\ArcSDE\ora11gexe\bin\st_shapelib.dll  ； SDE用户的libraries路径指定为：
 E:\app\Administrator\product\11.2.0\dbhome_1\BIN\st_shapelib.dll  ； 
@@ -41,23 +41,23 @@ E:\app\Administrator\product\11.2.0\dbhome_1\BIN\st_shapelib.dll  ；
 测试3：当尝试把listener.ora中的st_shapelib.dll文件路径写错时，居然没有报错，此处很疑惑!!!???
 注：要求大家肯定还是要写正确路径的，并且SDE用户的userlibraries和listener.ora的st_shapelib.dll的路径尽量保持一致(规范)
 
-***如下是一些需要注意的细节问题
-1、在重启监听时，容易遇到如下问题，此问题一般是因为PL/SQL还连着数据库，所以最好把oracle用户连接都先关闭了，再重启监听。
+##如下是一些需要注意的细节问题
+##1、在重启监听时，容易遇到如下问题，此问题一般是因为PL/SQL还连着数据库，所以最好把oracle用户连接都先关闭了，再重启监听。
 
  ![image](https://github.com/DistX/Learning/blob/master/oracle/doc/image/8.jpg)
  
-2、查看一下Oracle的监听状态，extproc（CLRextproc)的状态必须为静态（Unknow），如果是Ready状态就有可能出现问题，而且Oracle监听必须同时监听TCP和IPC
+##2、查看一下Oracle的监听状态，extproc（CLRextproc)的状态必须为静态（Unknow），如果是Ready状态就有可能出现问题，而且Oracle监听必须同时监听TCP和IPC
 
  ![image](https://github.com/DistX/Learning/blob/master/oracle/doc/image/9.jpg)
  
-3、	案例研究
-案例1  中江多规合一部署  报错ORA-28575及解决
+##3、	案例研究
+###案例1  中江多规合一部署  报错ORA-28575及解决
  
 结论：通过方案3，解决问题。不过报错根本原因无从得知。
 
  ![image](https://github.com/DistX/Learning/blob/master/oracle/doc/image/10.jpg)
  
-案例2  淮安多规合一现场演示机部署  报错ORA-28575及解决
+###案例2  淮安多规合一现场演示机部署  报错ORA-28575及解决
 
  ![image](https://github.com/DistX/Learning/blob/master/oracle/doc/image/11.jpg)
  
