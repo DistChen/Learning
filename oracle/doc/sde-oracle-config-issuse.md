@@ -36,6 +36,7 @@ E:\app\Administrator\product\11.2.0\dbhome_1\BIN\st_shapelib.dll  ；
 		测试  select sde.st_point(0,0,0) from dual;  成功！
        测试2：当尝试把SDE用户的libraries路径故意写错时，报错如下：
  ![image](https://github.com/DistX/Learning/blob/master/oracle/doc/image/7.jpg)
+ 
 测试3：当尝试把listener.ora中的st_shapelib.dll文件路径写错时，居然没有报错，此处很疑惑!!!???
 注：要求大家肯定还是要写正确路径的，并且SDE用户的userlibraries和listener.ora的st_shapelib.dll的路径尽量保持一致(规范)
 
