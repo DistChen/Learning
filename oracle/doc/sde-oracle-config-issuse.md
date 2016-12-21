@@ -4,11 +4,12 @@
  ![](./image/1.jpg)<br>
  ![](./image/2.jpg)<br>
  ![](./image/3.jpg)<br>
- 
+ ```
 以上关于ORA-28575的报错，原因及解决方案如下：
-
+```
+```
 报错原因1：Key值不一致
-
+```
  ![image](https://github.com/DistX/Learning/blob/master/oracle/doc/image/4.jpg)
 报错原因2：tnsnames.ora中SID值与listener.ora中SID_NAME值不一致
 
