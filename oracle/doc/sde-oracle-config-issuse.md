@@ -16,10 +16,10 @@
  ![image](https://github.com/DistX/Learning/blob/master/oracle/doc/image/5.jpg)
  
 报错原因3：ArcSde Service(esri_sde)服务以及相关ArcGis服务还没有启动完全 ，此时如果立即启动oracle监听
-OracleOraDb11g_home1TNSListener，也可能导致报错ORA-28575。<br>
+`OracleOraDb11g_home1TNSListener`，也可能导致报错ORA-28575。<br>
 情景模式：这种情况适用于解释原本SDE函数的使用是好的，突然某次开关机或者待机一段时间后就报错了，如果错误出现的情景基本如此，那么请优先尝试报错原因3对应的解决方案！
-报错原因3对应解决方案：重启电脑(服务器)-->先启动OracleServiceORCL和ArcSde Service(esri_sde) -->等待15分钟左右(看电脑性能，总之是要等ArcGis服务启动完全之后)-->再手动启动监听OracleOraDb11g_home1TNSListener(如果设计的是开启自启动，请先更改为手动) -->测试
-测试SDE： select sde.st_point(0,0,0) from dual;  成功
+报错原因3对应解决方案：重启电脑(服务器)-->先启动`OracleServiceORCL`和`ArcSde Service(esri_sde)` -->等待15分钟左右(看电脑性能，总之是要等ArcGis服务启动完全之后)-->再手动启动监听`OracleOraDb11g_home1TNSListener`(如果设计的是开启自启动，请先更改为手动) -->测试
+测试SDE： `select sde.st_point(0,0,0) from dual;`  成功
 
 
 报错原因1/2情景模式：报错原因1/2适用于解释那些电脑刚安装好SDE或者修改过相关配置后SDE函数就无法使用的情况<br>
