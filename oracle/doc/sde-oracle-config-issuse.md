@@ -47,21 +47,22 @@ E:\app\Administrator\product\11.2.0\dbhome_1\BIN\st_shapelib.dll  ； <br>
 
  ![image](https://github.com/DistX/Learning/blob/master/oracle/doc/image/8.jpg)
 ```
- 2、查看一下Oracle的监听状态，extproc（CLRextproc)的状态必须为静态（Unknow），如果是Ready状态就有可能出现问题，而且Oracle监听必须同时监听TCP和IPC
+ 2、查看一下Oracle的监听状态，extproc（CLRextproc)的状态必须为静态（Unknow），如果是Ready状态就有可能出现问题，
+ 而且Oracle监听必须同时监听TCP和IPC
 ```
  ![image](https://github.com/DistX/Learning/blob/master/oracle/doc/image/9.jpg)
 ```
 3、案例研究
 ```
 ```
-案例1  中江多规合一部署  报错ORA-28575及解决<br>
+案例1  中江多规合一部署  报错ORA-28575及解决
 ```
  ![image](https://github.com/DistX/Learning/blob/master/oracle/doc/image/10.jpg)
 ```
 结论：通过方案3，解决问题。不过报错根本原因无从得知。
 ``` 
 ```
-案例2  淮安多规合一现场演示机部署  报错ORA-28575及解决<br>
+案例2  淮安多规合一现场演示机部署  报错ORA-28575及解决
 ```
  ![image](https://github.com/DistX/Learning/blob/master/oracle/doc/image/11.jpg)
 ```
@@ -71,7 +72,7 @@ E:\app\Administrator\product\11.2.0\dbhome_1\BIN\st_shapelib.dll  ； <br>
 ```	
 ```
 判断问题：1.受历史数据的影响？推理：要影响早影响了，故排除。
-	 2.受图层位置有叠加或者互相包含的影响？推理：有可能，但是亲测并不存在。<br>
+	 2.受图层位置有叠加或者互相包含的影响？推理：有可能，但是亲测并不存在。
 ```
 ```
 推理2测试：图形位置可以上传成功。
