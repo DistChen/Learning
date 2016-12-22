@@ -5,6 +5,7 @@
     <url>http://58.246.138.178:22280/nexus/content/groups/public/</url>
 </repository>
 ```
+关于私服的使用请参考[公司nexus使用-Wiki](https://github.com/DistX/Learning/wiki/%E5%85%AC%E5%8F%B8nexus%E4%BD%BF%E7%94%A8)
 ### 添加依赖
 ```xml
 <dependency>
