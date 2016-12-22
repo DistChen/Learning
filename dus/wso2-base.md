@@ -15,6 +15,13 @@
 ```
 ### 使用场景示例：登录
 ```java
+String server_url = "https://localhost:9443/services/";
 LoginServiceClient loginClient = new LoginServiceClient(server_url);
 sessionCookie = loginClient.login("admin", "admin");
 ``` 
+### 使用场景示例：添加代理服务
+```java
+ProxyServiceAdminClient proxyClient = new ProxyServiceAdminClient(server_url,sessionCookie) ;
+String result = proxyClient.addProxyService("java_demo", targetEndpoint);
+Assert.assertEquals("添加代理服务失败", "successful", result);
+```
