@@ -25,7 +25,7 @@
 登录后，session 的默认有效时间是15分钟，可编辑`wso2_esb_home\repository\conf\tomcat\carbon\WEB-INF\web.xml`文件修改默认值(477行)，如下：
 ```xml
 <session-config>
-    <session-timeout>-1/session-timeout>
+    <session-timeout>-1</session-timeout>
     <cookie-config>
         <secure>true</secure>
     </cookie-config>
