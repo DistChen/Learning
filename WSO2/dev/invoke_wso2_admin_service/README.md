@@ -21,3 +21,13 @@
 > 注意 ：示例工程中的`wso2carbon.jks`文件请替换成实际的`JKS`文件，此文件位于`%ESB_HOME%/repository/resources/security`。 
 
 更多的功能都可以通过这些`管理服务`来完成。
+
+登录后，session 的默认有效时间是15分钟，可编辑`wso2_esb_home\repository\conf\tomcat\carbon\WEB-INF\web.xml`文件修改默认值(477行)，如下：
+```xml
+<session-config>
+    <session-timeout>-1/session-timeout>
+    <cookie-config>
+        <secure>true</secure>
+    </cookie-config>
+</session-config>
+```
