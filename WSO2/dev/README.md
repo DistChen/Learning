@@ -1,1 +1,2 @@
 - [调用 WSO2 提供的各种管理服务](./invoke_wso2_admin_service)
+- [编写一个自定义的Mediator](./wso2-custom-mediator)
