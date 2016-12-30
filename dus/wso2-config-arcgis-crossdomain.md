@@ -41,6 +41,6 @@ Flex 访问 Arcgis 服务之前，都会先访问一个跨域文件。
     <description>The main sequence for the message mediation</description>
 </sequence>
 ```
-> 注意：必须将上述配置中`address`的`format`属性设置为`soap11`或者`soap12`(目前暂不清楚原因)，如下图所示。
+> 注意：必须将上述配置中`address`的`format`属性设置为`soap11`或者`soap12`，如下图所示。
 
 ![](./img/1.png)
