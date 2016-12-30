@@ -15,9 +15,11 @@ Flex 访问 Arcgis 服务之前，都会先访问一个跨域文件。
 
 > [http://192.168.200.113:8280/crossdomain.xml](http://192.168.200.113:8280/crossdomain.xml)
 
-因此，需要在ESB对`http://192.168.200.113:8280/crossdomain.xml`地址进行代理，否则Flex会报出`安全沙漏问题`，服务就可用了。
+因此，需要在ESB中对`http://192.168.200.113:8280/crossdomain.xml`地址进行代理，否则Flex会报出`安全沙漏问题`，服务就不可用了。
 
-配置方法，修改`main`序列（关注filte部分，后续可能会对main序列加上其它的逻辑判断，这个crossdomain只是一部分），如下所示：
+#### 配置方法
+
+修改`main`序列（关注filte部分，后续可能会对main序列加上其它的逻辑判断，这个crossdomain只是一部分），如下所示：
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <sequence name="main" xmlns="http://ws.apache.org/ns/synapse">
