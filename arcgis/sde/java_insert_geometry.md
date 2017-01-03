@@ -1,4 +1,4 @@
-使用`Geotools`操作Arcgis，需要的`sde sdk`在中央仓库中没有，为了便于使用，我一起打包到[公司私服]((https://github.com/DistX/Learning/wiki/%E5%85%AC%E5%8F%B8nexus%E4%BD%BF%E7%94%A8))上面了，如下使用即可：
+使用`Geotools`操作Arcgis，需要的`sde sdk`在中央仓库中没有，为了便于使用，我一起打包到[公司私服](https://github.com/DistX/Learning/wiki/%E5%85%AC%E5%8F%B8nexus%E4%BD%BF%E7%94%A8)上面了，如下使用即可：
 ```xml
 <dependency>
     <groupId>dist.xdata.product</groupId>
