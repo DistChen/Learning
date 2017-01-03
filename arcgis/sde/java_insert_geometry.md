@@ -28,7 +28,7 @@ try {
     SimpleFeatureBuilder featureBuilder = new SimpleFeatureBuilder(featureType);
     List features = new ArrayList<SimpleFeature>();
     final Polygon polygon = (Polygon) reader.read("POLYGON(( -1967313.96100000 3840348.76870000, -2137274.89360000 3177086.59270000, -1009574.24170000 2888113.30060000, -839613.30910000 3551375.47660000, -1967313.96100000 3840348.76870000))");
-     /* or
+    /* or
     Polygon [] polygons = new Polygon[]{
             geometryFactory.createPolygon(new Coordinate[]{
                     new Coordinate(-1967313.96100000,3840348.76870000),
