@@ -1,4 +1,4 @@
-使用`Geotools`操作Arcgis，需要的`sde sdk`在中央仓库中没有，为了便于使用，我一起打包到[公司私服](https://github.com/DistX/Learning/wiki/%E5%85%AC%E5%8F%B8nexus%E4%BD%BF%E7%94%A8)上面了，如下使用即可：
+为了便于使用，我打包了一个项目到[公司私服](https://github.com/DistX/Learning/wiki/%E5%85%AC%E5%8F%B8nexus%E4%BD%BF%E7%94%A8)上面了，如下使用即可（有些依赖在中央仓库和私服没有，我自己安装到公司私服了）：
 ```xml
 <dependency>
     <groupId>dist.xdata.product</groupId>
@@ -6,7 +6,9 @@
     <version>1.0.0-RELEASE</version>
 </dependency>
 ```
-> 注意：需要配置公司的私服。
+> 注意：需要配置[公司的私服](https://github.com/DistX/Learning/wiki/%E5%85%AC%E5%8F%B8nexus%E4%BD%BF%E7%94%A8)。
+
+在这个jar中，目前我还没有封装任何的功能，后期会根据实际的使用加接口，便于操作空间表里面的数据。
 
 ### 插入数据示例
 ```java
