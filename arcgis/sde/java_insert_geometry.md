@@ -29,7 +29,7 @@ try {
 
     List features = new ArrayList<SimpleFeature>();
     final Polygon polygon = (Polygon) reader.read("POLYGON(( -1967313.96100000 3840348.76870000, -2137274.89360000 3177086.59270000, -1009574.24170000 2888113.30060000, -839613.30910000 3551375.47660000, -1967313.96100000 3840348.76870000))");
-    Stream.iterate(1,i -> i+1).limit(1).forEach(i->{
+    Stream.iterate(1,i -> i+1).limit(10).forEach(i->{
         featureBuilder.add("demo"+i);
         featureBuilder.add(polygon);
         features.add(featureBuilder.buildFeature(null));
