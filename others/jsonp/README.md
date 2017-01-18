@@ -111,3 +111,5 @@ http.createServer((req,res)=>{
 - jsonp只是一中函数调用方式
 - jsonp虽然方便，但是不安全
 - jsonp需要服务端进行改造，用传递的回调函数进行包装
+
+> 可参考[示例代码](./jsonp-sample)进行测试。如果需要运行示例工程，请先执行`npm install`，然后通过`node server.js`或者`npm start`启动。

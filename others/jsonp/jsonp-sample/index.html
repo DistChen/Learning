@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jsonp</title>
+    <script type="text/javascript" src="./node_modules/jquery/dist/jquery.js" ></script>
+</head>
+<body>
+    <button onclick="test();">测试</button>
+    <script>
+        function test(){
+            $.ajax({
+                type: "GET",
+                url: "http://127.0.0.1:8080",
+                dataType: "jsonp",
+                success: function(e){
+                    console.log(e);
+                },
+                error : function(e) {
+                    console.log(e);
+                }
+            });
+        }
+        function callbackDemo(data){
+            console.log(data);
+        }
+    </script>
+    <script type="text/javascript" src="http://127.0.0.1:8080/?callback=callbackDemo"></script>
+</body>
+</html>
