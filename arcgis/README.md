@@ -1,2 +1,2 @@
 #### 开发
-- [Java 操作 Arcsde](./sde/java_insert_geometry.md)
+- [Java 操作 ArcSDE](./sde/java_insert_geometry.md)
