@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.0.xsd">
+
+    <bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer"
+          p:location="classpath:/config.properties"
+          p:fileEncoding="UTF-8"/>
+
+    <bean id="springContextHelper" class="dist.dgp.util.ApplicationContextUtil" />
+ 
+    <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource" destroy-method="close"
+          p:driverClassName="${driverClassName}"
+          p:url="${url}"
+          p:username="${username}"
+          p:password="${password}"
+          p:maxActive="${maxActive}"
+          p:maxIdle="${maxIdle}"
+          p:maxWait="${maxWait}"
+          p:testWhileIdle="${testWhileIdle}"
+          p:removeAbandoned="${removeAbandoned}"
+          p:removeAbandonedTimeout="${removeAbandonedTimeout}"
+          p:timeBetweenEvictionRunsMillis="${timeBetweenEvictionRunsMillis}"
+          p:numTestsPerEvictionRun="${numTestsPerEvictionRun}"
+          p:minEvictableIdleTimeMillis="${minEvictableIdleTimeMillis}"
+          p:logAbandoned="${logAbandoned}"/>
+
+    <bean id="QueryStatCtl" class="dist.dgp.controller.QueryStatCtl" />
+
+
+</beans>

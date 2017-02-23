@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<procedures xmlns="http://www.dist.com.cn"
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xsi:schemaLocation="http://www.dist.com.cn distprocedure.xsd">
+
+   <procedure id="testPro">
+        <proName>prc_test</proName>
+        <parameters>
+            <parameter name="p_str" type="in" dataType="varchar"/>
+            <parameter name="p_num" type="in" dataType="number" />
+            <parameter name="p_strDate" type="in" dataType="date" format="yyyy-MM-dd" />
+            <parameter name="p_date" type="in" dataType="date" />
+            <parameter name="p_inclob" type="in" dataType="clob" />
+            <parameter name="p_inblob" type="in" dataType="blob" />
+            <parameter name="p_info" type="out" dataType="varchar" />
+            <parameter name="p_outclob" type="out" dataType="clob" />
+            <parameter name="p_outblob" type="out" dataType="blob" />
+            <parameter name="p_cursor" type="out" dataType="cursor" vo="dist.dgp.model.Person" />
+        </parameters>
+    </procedure>
+</procedures>
