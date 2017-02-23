@@ -1,7 +1,7 @@
 package dist.dgp.test;
 
 import dist.common.procedure.define.ProcedureFile;
-import dist.dgp.controller.Person;
+import dist.dgp.model.Person;
 import dist.dgp.controller.QueryStatCtl;
 import dist.dgp.util.ApplicationContextUtil;
 import oracle.sql.BLOB;
