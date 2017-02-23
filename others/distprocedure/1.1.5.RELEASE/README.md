@@ -53,7 +53,7 @@ public void setFeatures(Map<String, ProcedureModel> features) {
 ```
 
 为了将features.xml文件的内容转为Map，在spring中还配置了属性编辑器，如下所示：
-```
+```xml
 <bean class="org.springframework.beans.factory.config.CustomEditorConfigurer"
           p:customEditors-ref="customPropertyEditor" />
 
@@ -107,7 +107,7 @@ distprocedure 会自动将上面的`clobstr`和`blobBytes`封装成`Clob`、`CBl
 #### 4、结果映射
 之前将游标里的数据映射成vo类时，需要保持属性和字段的一一对应，任何一方多一个或者少一个都会导致自动映射失败。新版本中已没有此限制，做到了只要能映射就映射，不能映射就忽略，任何一方多字段或者属性都不会导致映射失败。
 
-#### 示例
+### 使用示例
 
 ##### feature.xml 配置
 ```xml
@@ -207,7 +207,7 @@ public class Person {
 ```
 
 ##### 测试代码
-```
+```java
 public class DistProcedureTest {
 
     @Before
