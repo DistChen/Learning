@@ -1,1 +1,2 @@
 - [jsonp原理](./jsonp)
+- [字符编码及不同场景下的编码和解码](./character-encode.md)
