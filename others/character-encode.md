@@ -100,31 +100,44 @@ public class Demo{
 web项目是乱码的集中地：请求-应答模式。由于客户端和服务器的编码环境不一致，所以导致很容易出现乱码问题。通过浏览器请求时，会有以下的几个场景涉及到中文编码的问题：
 
 #### URL 中包含中文
-url 中包含中文的有两部分：path和Query String，如下所示：
+url 中包含中文的有两部分：Path和Query String，如下所示：
 ```
 http://127.0.0.1:8080/demo/我?name=我
 ```
-上面这个url，浏览器会自动转成如下的形式：
+上面这个url，在`Chrome`、`Firefox`浏览器中会自动转成如下的形式：
 ```
 http://127.0.0.1:8080/demo/%E6%88%91?name=%E6%88%91
 ```
-可以看到浏览器自动将Path和Query String中的`我`转成了`%E6%88%91`，`我`的UTF-8编码正是`E68891`。因此可以确定，url中的中文，浏览器会转成UTF-8编码。
+在`IE`浏览器中会自动转成如下的形式：
+```
+http://127.0.0.1:8080/demo/%E6%88%91?name=%CE%D2
+```
+可以看到不同的浏览器处理的方式不同：`Chrome`、`Firefox`、`IE`将Path中的`我`转成了`%E6%88%91`，`我`的UTF-8编码正是`E68891`。而对于Query String部分，`Chrome`、`Firefox`同样是转成了`%E6%88%91`，`IE`却转成了`%CE%D2`，这是`我`的GBK编码。
 
-那服务器如何解码？以Tomcat为例，如果不加任何的控制，Tomcat会默认转成`ISO-8859-1`，而浏览器传输过来的是UTF-8，毫无疑问会乱码，如下所示：
+由此可得知：URL中Path部分的中文，浏览器均会转成UTF-8，而对于Query String 部分，`Chrome`、`Firefox`浏览器会转成UTF-8编码，`IE`会转成GBK编码(操作系统默认编码)。
+
+那服务器如何解码？以Tomcat为例，如果不加任何的控制，Tomcat会默认转成`ISO-8859-1`，而浏览器传输过来的是Path部分是UTF-8，而Query String部分就不一定了，因浏览器而定。如果不加处理，毫无疑问会乱码，如下所示：
 ```java
 request.getParameter("name");
 ```
 如果不修改任何配置，代码层面上可通过如下的形式还原：
 ```java
 new String(request.getParameter("name").getBytes("ISO-8859-1"),"UTF-8")
+// new String(request.getParameter("name").getBytes("ISO-8859-1"),"GBK")
 ```
 也可以通过修改Tomcat的配置来避免修改代码，打开server.xml文件，设置`URIEncoding`，如下：
 ```xml
 <Connector port="8080" protocol="HTTP/1.1"
            connectionTimeout="20000"
            redirectPort="8443" URIEncoding="UTF-8" />
+           
+or
+
+<Connector port="8080" protocol="HTTP/1.1"
+           connectionTimeout="20000"
+           redirectPort="8443" URIEncoding="GBK" />
 ```
-属性`URIEncoding`表明用何种方式来解码URL。
+属性`URIEncoding`表明用何种方式来解码URL。通过上面的试验可得知，对于直接在浏览器中输入含中文的URL，不同的浏览器处理的方式有差异(还有很多其它的浏览器)，后台无法通过一个解码规则来应对。因此，在实际的开发中应该屏蔽掉直接输入含中文的URL来访问的场景。
 
 #### 表单提交
 表单提交，中文的编码按照如下的规则来进行：
