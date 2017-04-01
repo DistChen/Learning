@@ -84,4 +84,24 @@ Carte hostname port
 
 ![](./img/XG5YV005_OVZNF21NI2.png)
 
+### 调用服务带参数
+调用服务时，也可以传递参数，比如通过id查询一张表里面的某条记录时，数据如下所示：
+
+![](./img/p1.png)
+
+如果我要查询`id=100231`的记录，则如下组织URL即可：
+> http://localhost:8080/kettle/executeTrans/?rep=kettle54_local&user=admin&pass=admin&trans=sh-sdd/BigData&`id=100231`
+
+`参数名可以任意设置`，只要在`获取变量`时，对应上就可以了。转换中按照如下的形式即可提取出参数：
+
+![](./img/p2.png)
+
+之后进行一次流查询即可查询指定ID的数据：
+
+![](./img/p3.png)
+
+查询结果如下所示：
+
+![](./img/p4.png)
+
 更多API可参考：[http://help.pentaho.com/Documentation/5.4/0R0/070/020/020/020]( http://help.pentaho.com/Documentation/5.4/0R0/070/020/020/020)
