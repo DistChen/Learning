@@ -90,7 +90,7 @@ Carte hostname port
 ![](./img/p1.png)
 
 如果我要查询`id=100231`的记录，则如下组织URL即可：
-> http://localhost:8080/kettle/executeTrans/?rep=kettle54_local&user=admin&pass=admin&trans=sh-sdd/BigData&`id=100231`
+> http://localhost:8080/kettle/executeTrans/?rep=kettle54_local&user=admin&pass=admin&trans=sh-sdd/BigData&id=100231
 
 `参数名可以任意设置`，只要在`获取变量`时，对应上就可以了。转换中按照如下的形式即可提取出参数：
 
