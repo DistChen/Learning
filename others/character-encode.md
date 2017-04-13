@@ -175,9 +175,8 @@ or
     
 - 示例3：页面无编码，form未设置
     ```xml
-  	<meta charset="UTF-8">
   	...
-    <form accept-charset="GBK" action="http://127.0.0.1:8080" method="GET" >
+    <form action="http://127.0.0.1:8080" method="GET" >
 		<input type="text" name="name" >
     </form>
     ```
